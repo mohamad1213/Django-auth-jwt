@@ -55,7 +55,4 @@ python3 manage.py runserver
 
 ```
 ## Deploy
-this project has been deployed in Heroku (Cloud Application Platform) in this link [here](https://labsosv2.herokuapp.com/)
-
-This project has 3 roles, namely college student, lecturers and staff, 
-You can sign in with the account below :
+this project has been deployed in Heroku (Cloud Application Platform) in this link [here](https://djangoauthjwt.herokuapp.com/)
