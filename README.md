@@ -24,12 +24,12 @@ pip is already installed if you are using Python 2 >=2.7.9 or Python 3 >=3.4 dow
 # Windows
 The Python installers for Windows include pip. You should be able to access pip using:
 Open your CMD/Terminal
-``bash
+```bash
 git clone https://github.com/mohamad1213/Django-auth-jwt.git
-``
-``bash
+```
+```bash
 cd Django-auth-jwt
-``
+```
 ## Install Packages
 
 To install all the required packages, run the command
