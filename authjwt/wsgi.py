@@ -24,13 +24,3 @@ from fastapi import FastAPI
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "goatfish.settings")
 
 application = get_wsgi_application()
-
-from authjwt.urls import router as main_router
-
-app = FastAPI(
-    title="Goatfish",
-    description="A demo project. Also, an actual fish with a weird name.",
-    version="We aren't doing versions yet. Point oh.",
-)
-
-app.include_router(main_router, prefix="/api")
