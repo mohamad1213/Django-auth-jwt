@@ -7,13 +7,16 @@ from rest_framework_simplejwt.views import (
 )
 from .views import UserCreate, TodosListCreateView, TodosRetrieveUpdateDestroyAPIView
 from .views import LoginView
+from rest_framework_swagger.views import get_swagger_view
 
+schema_view = get_swagger_view(title='Authenticated API')
 
 urlpatterns = [
+    path("", schema_view),
+    # path('', TodosListCreateView.as_view()),
+    # path('login', LoginView.as_view()),
     path("registration/", UserCreate.as_view()),
-    path('', TodosListCreateView.as_view()),
-    path('login', LoginView.as_view()),
-    path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token_verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('token_refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
