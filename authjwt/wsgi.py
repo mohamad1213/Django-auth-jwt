@@ -14,13 +14,3 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'authjwt.settings')
 
 application = get_wsgi_application()
-
-
-import os
-
-from django.core.wsgi import get_wsgi_application
-from fastapi import FastAPI
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "goatfish.settings")
-
-application = get_wsgi_application()
