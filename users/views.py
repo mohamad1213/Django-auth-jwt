@@ -10,8 +10,34 @@ from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+class LoginView(APIView):
+    permission_classes = (AllowAny,)
 
+    def post(self, request, *args, **kwargs):
+        username = request.data['username']
+        password = request.data['password']
 
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            payload = {
+                'user_id': user.id,
+                'exp': datetime.now(),
+                'token_type': 'access'
+            }
+
+            user = {
+                'user': username,
+                'email': user.email,
+                'time': datetime.now().time(),
+                'userType': 10
+            }
+
+            token = jwt.encode(payload, SECRET_KEY).decode('utf-8')
+            return JsonResponse({'success': 'true', 'token': token, 'user': user})
+
+        else:
+            return JsonResponse({'success': 'false', 'msg': 'The credentials provided are invalid.'})
 class UserCreate(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

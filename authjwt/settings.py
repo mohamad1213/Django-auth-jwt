@@ -25,7 +25,7 @@ SECRET_KEY = '%sff&oc4hwqp6)vo!kz(8^7s%n7gqwglwm*@kx#__u7!9!1+@$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://djangoauthjwt.herokuapp.com/','*']
 
 
 # Application definition
@@ -90,12 +90,12 @@ WSGI_APPLICATION = 'authjwt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'jwt',
-        'USER':'',
-        'PASSWORD':'',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ddmal7rhipt5hp',
+        'USER':'tvrqyowjeoipcb',
+        'PASSWORD':'a9659a13fd97f9bcd7152b31ebe3c91d0fd0495e6350729bd5430321ce42781f',
+        'HOST': 'ec2-52-203-118-49.compute-1.amazonaws.com',
+        'PORT': '5432',
 
     }
 }
