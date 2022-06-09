@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'authjwt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ddmal7rhipt5hp',
         'USER':'tvrqyowjeoipcb',
         'PASSWORD':'a9659a13fd97f9bcd7152b31ebe3c91d0fd0495e6350729bd5430321ce42781f',
